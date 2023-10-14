@@ -16,7 +16,7 @@
   (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
 
 #define BLOG_LOG(log, log_type, ...)                                           \
-  blog_log(log, log_type, __FILENAME__, __FUNCTION__, __LINE__, __VA_ARGS__)
+  blog_log(log, log_type, __FILENAME__, __FUNCTION__, __LINE__, ##__VA_ARGS__)
 
 typedef enum BLOG_LOG_TYPE { INFO, WARNING, DEBUG, ERROR } BLOG_LOG_TYPE;
 
